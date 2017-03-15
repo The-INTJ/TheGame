@@ -13,6 +13,7 @@ public class MenuState extends GameState {
 	private int currentSelection = 0;
 	
 	public MenuState(GameStateManager gsm) {
+
 		super(gsm);
 	}
 	
@@ -36,7 +37,7 @@ public class MenuState extends GameState {
 			}
 			
 			g.setFont(new Font("Arial", Font.PLAIN, 72));
-			g.drawString(options[i], GamePanel.WIDTH / 2 - 75, 150 + i * 150);
+			g.drawString(options[i], GamePanel.WIDTH / 2 - 75, 150 + (i * 150));
 		}
 	}
 	
@@ -57,6 +58,7 @@ public class MenuState extends GameState {
 			if(currentSelection == 0) { 			//'PLAY' is selected
 			gsm.states.push(new Level1State(gsm));
 		} else if (currentSelection == 1) {			//'CREDITS' is selected
+				gsm.states.push(new CreditsState(gsm));
 		} else if(currentSelection == 2) {			//'QUIT' is selected
 			System.exit(0);
 		}

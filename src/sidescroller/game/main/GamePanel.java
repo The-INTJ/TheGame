@@ -44,6 +44,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 			start = System.nanoTime();
 			tick();
 			repaint();
+
 			
 			elapsed = System.nanoTime() - start;
 			wait = targettime - elapsed / 1000000;
@@ -59,6 +60,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		}
 	}
 	public void tick(){
+
+		gsm.tick();
 	}
 	
 	public void paintComponent(Graphics g){
